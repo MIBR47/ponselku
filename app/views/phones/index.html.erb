@@ -19,17 +19,18 @@
         </ul>
       </div>
       <%= link_to 'new', new_phone_path %>
-      <div id="badan" >
-        <% @phones.each do |phone| %>
+      <div class="container-fluid" >
         <div class="row">
+        <% @phones.each do |phone| %>
+          
           <div class="col-sm-2" style="background-color:lavender;">
-            <img src="<%= url_for(phone.image) if phone.image.attached? %>" width="100" height="100">
-            <tr>
-            <tr>
-            <%= phone.brand %>
+           <center> <img src="<%= url_for(phone.image) if phone.image.attached? %>" width="100" height="100"></center>
+            
+            <center> <%= link_to "#{phone.brand}", phone_path(phone) %></center>
           </div>
-         </div> 
+          
          <% end %>
+       </div>
       </div>
 
       <div id="samping">

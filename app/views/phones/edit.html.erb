@@ -1,74 +1,105 @@
-<h1>Edit phone</h1>
- 
-<%= form_with(model: @phone, local: true) do |form| %>
- 
-  <% if @phone.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@phone.errors.count, "error") %> prohibited
-        this article from being saved:
-      </h2>
-      <ul>
-        <% @phone.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PonselKu</title>
+    <%= stylesheet_link_tag "style", media: "all" %>
+  </head>
+  <body>
+    <div id="template">
+      <div id="header">
+        <h2>PonselKu</h2>
+      </div>
+      
+      <div id="menu">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/news">News</a></li>
+          <li><a href="/phones">Smartphone</a></li>
+          
+        </ul>
+      </div>
+      <div class="container-fluid" >
+          <h1>Edit phone</h1>
+           
+          <%= form_with(model: @phone, local: true) do |form| %>
+           
+            <% if @phone.errors.any? %>
+              <div id="error_explanation">
+                <h2>
+                  <%= pluralize(@phone.errors.count, "error") %> prohibited
+                  this article from being saved:
+                </h2>
+                <ul>
+                  <% @phone.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
+                    <p>
+                      <%= form.file_field :image %>
+                      
+
+                    </p>
+                    <p>
+                      <%= form.label :brand %><br>
+                      <%= form.text_field :brand %>
+                    </p>
+                   
+                    <p>
+                      <%= form.label :os %><br>
+                      <%= form.text_area :os %>
+                    </p>
+                   
+                    <p>
+                      <%= form.label :chipset %><br>
+                      <%= form.text_area :chipset %>
+                    </p>
+
+                    <p>
+                      <%= form.label :cpu %><br>
+                      <%= form.text_area :cpu %>
+                    </p>
+                    
+                    <p>
+                      <%= form.label :gpu %><br>
+                      <%= form.text_area :gpu %>
+                    </p>
+                    
+                    <p>
+                      <%= form.label :memory %><br>
+                      <%= form.text_area :memory %>
+                    </p>
+                    
+                    <p>
+                      <%= form.label :camera %><br>
+                      <%= form.text_area :camera %>
+                    </p>
+
+                    <p>
+                      <%= form.label :front_camera %><br>
+                      <%= form.text_area :front_camera %>
+                    </p>
+
+                    <p>
+                      <%= form.label :battrey %><br>
+                      <%= form.text_area :battrey %>
+                    </p>
+           
+            <p>
+              <%= form.submit %>
+            </p>
+           
+          <% end %>
+        </div>
+           </div>
+
+      <div id="samping">
+
+      </div>
+
+      
     </div>
-  <% end %>
-          <p>
-            <%= form.file_field :image %>
-            
+  </body>
+</html>
 
-          </p>
-          <p>
-            <%= form.label :brand %><br>
-            <%= form.text_field :brand %>
-          </p>
-         
-          <p>
-            <%= form.label :os %><br>
-            <%= form.text_area :os %>
-          </p>
-         
-          <p>
-            <%= form.label :chipset %><br>
-            <%= form.text_area :chipset %>
-          </p>
-
-          <p>
-            <%= form.label :cpu %><br>
-            <%= form.text_area :cpu %>
-          </p>
-          
-          <p>
-            <%= form.label :gpu %><br>
-            <%= form.text_area :gpu %>
-          </p>
-          
-          <p>
-            <%= form.label :memory %><br>
-            <%= form.text_area :memory %>
-          </p>
-          
-          <p>
-            <%= form.label :camera %><br>
-            <%= form.text_area :camera %>
-          </p>
-
-          <p>
-            <%= form.label :front_camera %><br>
-            <%= form.text_area :front_camera %>
-          </p>
-
-          <p>
-            <%= form.label :battrey %><br>
-            <%= form.text_area :battrey %>
-          </p>
- 
-  <p>
-    <%= form.submit %>
-  </p>
- 
-<% end %>
- 
-<%= link_to 'Back', phones_path %>

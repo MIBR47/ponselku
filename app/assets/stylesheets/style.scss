@@ -1,13 +1,13 @@
 #template{
 	height: auto;
-	width: 960px;
+	width: 1080px;
 	
 	margin: 10px auto auto ;
 }
 
 #header{
 	height: auto;
-	width: 960px;
+	width: 1080px;
 	border: 1px solid #000;
 	
 	
@@ -18,7 +18,7 @@ h2{
 
 #menu{
 	height: 50px;
-	width: 960px;
+	width: 1080px;
 	
 		
 }
@@ -75,7 +75,7 @@ li.dropdown {
   display: block;
 }
 
-#badan{
+container-fluid{
   height: auto;
   width: 720px;
 }
@@ -89,6 +89,10 @@ table.table-striped{
 table.table-dark{
   table-layout: auto;
   width: 50%; 
+}
+
+row{
+  margin-left: 180px;
 }
 
 #samping{
