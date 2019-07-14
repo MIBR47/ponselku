@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PonselKu</title>
+    <%= stylesheet_link_tag "style", media: "all" %>
+  </head>
+  <body>
+    <div id="template">
+      <div id="header">
+        <h2>PonselKu</h2>
+      </div>
+      
+      <div id="menu">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/news">News</a></li>
+          <li><a href="/phones">Smartphone</a></li>
+          
+        </ul>
+      </div>
+      <div class="container-fluid" >
+          <h1>Edit</h1>
+           
+          <%= form_with(model: @new, local: true) do |form| %>
+           
+            <% if @new.errors.any? %>
+              <div id="error_explanation">
+                <h2>
+                  <%= pluralize(@new.errors.count, "error") %> prohibited
+                  this article from being saved:
+                </h2>
+                <ul>
+                  <% @new.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
+                    <p>
+                      <%= form.file_field :image %>
+                      
+
+                    <p>
+                      <%= form.label :title %><br>
+                      <%= form.text_field :title %>
+                    </p>
+                   
+                    <p>
+                      <%= form.label :text %><br>
+                      <%= form.text_area :text %>
+                    </p>
+            <p>
+              <%= form.submit %>
+            </p>
+           
+          <% end %>
+        </div>
+           </div>
+
+      <div id="samping">
+
+      </div>
+
+      
+    </div>
+  </body>
+</html>
+
