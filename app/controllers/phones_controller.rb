@@ -1,7 +1,6 @@
 class PhonesController < ApplicationController
 	def index
 		@phones = Phone.all
-		@phones.image.attach(phone_params[:image])
 	end
 
 	def show

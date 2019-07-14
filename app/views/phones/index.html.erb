@@ -22,8 +22,10 @@
       <div id="badan" >
         <% @phones.each do |phone| %>
         <div class="row">
-          <div class="col" style="background-color:lavender;">
-            <img src="<%= url_for(@phones.image) if @phone.image.attached? %>" width="100" height="100">
+          <div class="col-sm-2" style="background-color:lavender;">
+            <img src="<%= url_for(phone.image) if phone.image.attached? %>" width="100" height="100">
+            <tr>
+            <tr>
             <%= phone.brand %>
           </div>
          </div> 
