@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>PonselKu</title>
+		<link rel="stylesheet" type="text/css" href="/hp/app/assets/stylesheet/home.scss">
+		<%= stylesheet_link_tag "style", media: "all" %>
+	</head>
+	<body>
+		<div id="template">
+			<div id="header">
+				<h2>PonselKu</h2>
+			</div>
+			
+			<div id="menu">
+				<ul>
+					<li><a href="/">Home</a></li>
+          			<li><a href="/news">News</a></li>
+          			<li><a href="/phones">Smartphone</a></li>
+          
+					
+				</ul>
+			</div>
+
+			<div id ="badan">
+			</div>
+			<div id="samping">
+				<h1></h1>
+				<table class="table table-striped" >
+			        <thead>
+			          <tr>
+			            <th>Device</th>
+			            <th></th>
+			          </tr>
+			        </thead>
+			        <tbody> 
+			         <% @phones.each do |phone| %>
+			          <tr>
+			            <td><%= phone.brand %></td>
+			            <!--<td><%= phone.os %></td>-->
+			            <td><button class="btn btn-default" type="submit"><%= link_to 'Show', phone_path(phone) %></button></td>
+			            <td><button class="btn btn-default" type="submit"><%= link_to 'Edit', edit_phone_path(phone) %></button></td>
+			                  
+			           </tr>
+			          <% end %>
+			        </tbody>
+			        </table>
+				
+				
+				
+
+			</div>
+		</div>
+	</body>
+</html>
+

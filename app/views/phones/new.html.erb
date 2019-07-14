@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PonselKu</title>
+    <link rel="stylesheet" type="text/css" href="/hp/app/assets/stylesheet/style.css">
+  </head>
+  <body>
+    <div id="template">
+      <div id="header">
+        <h2>PonselKu</h2>
+      </div>
+      
+      <div id="menu">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/news">News</a></li>
+          <li><a href="/phones">Smartphone</a></li>
+          
+        </ul>
+      </div>
+
+      <div id="badan">
+
+        <%= form_with scope: :phone,url: phones_path, local: true do |form| %>
+          <p>
+            <%= form.label :brand %><br>
+            <%= form.text_field :brand %>
+          </p>
+         
+          <p>
+            <%= form.label :os %><br>
+            <%= form.text_field :os %>
+          </p>
+         
+          <p>
+            <%= form.label :chipset %><br>
+            <%= form.text_field :chipset %>
+          </p>
+
+          <p>
+            <%= form.label :cpu %><br>
+            <%= form.text_field :cpu %>
+          </p>
+          
+          <p>
+            <%= form.label :gpu %><br>
+            <%= form.text_field :gpu %>
+          </p>
+          
+          <p>
+            <%= form.label :memory %><br>
+            <%= form.text_field :memory %>
+          </p>
+          
+          <p>
+            <%= form.label :camera %><br>
+            <%= form.text_field :camera %>
+          </p>
+
+          <p>
+            <%= form.label :front_camera %><br>
+            <%= form.text_field :front_camera %>
+          </p>
+
+          <p>
+            <%= form.label :battrey %><br>
+            <%= form.text_field :battrey %>
+          </p>
+
+
+          <p>
+            <%= form.submit %>
+          </p>
+        <% end %>
+        <%= link_to 'My Blog', new_phone_path %>
+      </div>
+
+      
+    </div>
+  </body>
+</html>
+

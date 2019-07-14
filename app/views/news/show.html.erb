@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PonselKu</title>
+    <link rel="stylesheet" type="text/css" href="/hp/app/assets/stylesheet/style.css">
+  </head>
+  <body>
+    <div id="template">
+      <div id="header">
+        <h2>PonselKu</h2>
+      </div>
+      
+      <div id="menu">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/news">News</a></li>
+          <li><a href="/phones">Smartphone</a></li>
+          
+        </ul>
+      </div>
+
+      <div id="badan">
+  
+      <p>
+  	 	<strong>Title:</strong>
+ 	  	<%= @new.title %>
+	  </p>
+ 
+	  <p>
+  		<strong>Text:</strong>
+  		<%= @new.text %>
+	  </p>
+        <%= link_to 'My Blog', new_phone_path %>
+      </div>
+
+      
+    </div>
+  </body>
+</html>
+
+
