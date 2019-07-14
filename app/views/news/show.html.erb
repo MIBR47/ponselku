@@ -20,14 +20,14 @@
       </div>
 
       <div id="body">
-  
+      
       <p>
- 	  	<h2><%= @new.title %></h2>
-	  </p>
- 
-	  <p>
-  		<%= @new.text %>
-	  </p>
+ 	  	<h3><%= @new.title %></h3>
+	    </p>
+      <center><img src="<%= url_for(@new.image) if @new.image.attached? %>" ></center>
+	    <p>
+  		  <%= markdown(@new.text) %>
+	    </p>
       </div>
 
       

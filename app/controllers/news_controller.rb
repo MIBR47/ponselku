@@ -33,7 +33,7 @@ class NewsController < ApplicationController
 	  	end
 	end
  
-private
+	private
 	def new_params
 		params.require(:new).permit(:image, :title, :text)
 	end

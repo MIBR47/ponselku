@@ -47,7 +47,10 @@
                    
                     <p>
                       <%= form.label :text %><br>
-                      <%= form.text_area :text %>
+                          <%= md_simple_editor  do %>
+                              <%= form.text_area :text %>
+                          <% end %>
+                      
                     </p>
             <p>
               <%= form.submit %>

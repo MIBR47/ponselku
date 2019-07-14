@@ -1,3 +1,8 @@
+/*
+ *= require_tree .
+ *= require_self
+*= require md_simple_editor
+*/
 #template{
 	height: auto;
 	width: 1080px;
@@ -101,6 +106,7 @@ row{
   
   margin-left: 700px;
 }
+
 
 
 @import "bootstrap";
