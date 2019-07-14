@@ -1,7 +1,9 @@
 class PhonesController < ApplicationController
 	def index
-		@phone = Phone.all
+		@phones = Phone.all
+		@phones.image.attach(phone_params[:image])
 	end
+
 	def show
 		@phone = Phone.find(params[:id])
 	end
@@ -16,14 +18,14 @@ class PhonesController < ApplicationController
 
 	def create
 		@phone = Phone.new(phone_params)
-
+		@phone.image.attach(phone_params[:image])
 		@phone.save
 		redirect_to @phone
 	end
 
 	def update
 	  	@phone = Phone.find(params[:id])
-	 
+	 	@phone.image.attach(phone_params[:image])
 	  	if @phone.update(phone_params)
 	    	redirect_to @phone
 	  	else
@@ -36,6 +38,6 @@ class PhonesController < ApplicationController
 
 private
   def phone_params
-    params.require(:phone).permit(:brand, :os, :chipset, :cpu, :gpu, :memory, :camera, :front_camera, :battrey)
+    params.require(:phone).permit(:image, :brand, :os, :chipset, :cpu, :gpu, :memory, :camera, :front_camera, :battrey)
   end
 end

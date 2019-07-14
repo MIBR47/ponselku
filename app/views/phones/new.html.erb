@@ -23,6 +23,9 @@
 
         <%= form_with scope: :phone,url: phones_path, local: true do |form| %>
           <p>
+            <%= form.file_field :image %>
+          </p>
+          <p>
             <%= form.label :brand %><br>
             <%= form.text_field :brand %>
           </p>

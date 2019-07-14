@@ -25,6 +25,7 @@
       <strong><h2> <%= @phone.brand %></h2></strong>
       </p>
       <table class="table table-dark">
+       <img src="<%= url_for(@phone.image) if @phone.image.attached? %>" width="250" height="250">
       <tr>
         <th><strong>OS</strong></th>
         <th><%= @phone.os %></th>
